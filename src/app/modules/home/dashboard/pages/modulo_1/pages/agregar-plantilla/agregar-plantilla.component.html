@@ -1,0 +1,22 @@
+<div class="contenido">
+    <h1>Agregar Plantilla</h1>
+    <section>
+        
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" name="nombre" id="nombre-documento" [(ngModel)]="plantilla.nombre">
+        </mat-form-field>
+        
+        <mat-form-field class="content-text-area">
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput [(ngModel)]="plantilla.descripcion"></textarea>
+        </mat-form-field>
+        
+        <app-drop-area [vertical]="true" [horizontal]="false" (fileUrlsEmitter)="onFileUrlsEmitted($event)"></app-drop-area>
+        
+        <div class="form-contenedor-button">
+            <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+            <button mat-raised-button color="primary" (click)="enviarObjecto()">Guardar</button>
+        </div>
+    </section>
+</div>
